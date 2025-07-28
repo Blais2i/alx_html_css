@@ -1,0 +1,11 @@
+* Example custom styles */
+header {
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
