@@ -2,31 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Tweets</title>
-<head>
-    <!-- Other head elements -->
     <link href="base.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
 </head>
-<body>
+<body class="works_on_smartphone">
     <header>
         <h1>My Favorite Tweets</h1>
-        <a href="index.html">← Back to Homepage</a>
+        <nav>
+            <a href="index.html">← Back to Homepage</a>
+        </nav>
     </header>
 
     <main>
-        <!-- Example Tweet Embed - Replace with your own -->
-        <blockquote class="twitter-tweet">
-            <p lang="en" dir="ltr">Just starting my web development journey with HTML! Excited to build my first portfolio. 
-            <a href="https://twitter.com/hashtag/ALX?src=hash&amp;ref_src=twsrc%5Etfw">#ALX</a> 
-            <a href="https://twitter.com/hashtag/WebDev?src=hash&amp;ref_src=twsrc%5Etfw">#WebDev</a></p>
-            &mdash; ALX Learner (@alx_learner) <a href="https://twitter.com/alx_learner/status/123456789?ref_src=twsrc%5Etfw">January 1, 2023</a>
-        </blockquote> 
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <article>
+            <h2>My Web Development Journey</h2>
+            <!-- Example Tweet Embed - Replace with your own -->
+            <div class="tweet-container">
+                <blockquote class="twitter-tweet">
+                    <p lang="en" dir="ltr">Just starting my web development journey with HTML! Excited to build my first portfolio. 
+                    <a href="https://twitter.com/hashtag/ALX?src=hash&amp;ref_src=twsrc%5Etfw">#ALX</a> 
+                    <a href="https://twitter.com/hashtag/WebDev?src=hash&amp;ref_src=twsrc%5Etfw">#WebDev</a></p>
+                    &mdash; ALX Learner (@alx_learner) <a href="https://twitter.com/alx_learner/status/123456789?ref_src=twsrc%5Etfw">January 1, 2023</a>
+                </blockquote> 
+            </div>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </article>
+
+        <aside>
+            <h3>More About Twitter</h3>
+            <p>Twitter is a great platform for web developers to share their progress and learn from others.</p>
+        </aside>
     </main>
 
     <footer>
-        <p>Made with ♥ by <a href="index.html">Your Name</a></p>
+        <p>Made with ♥ by <a href="https://github.com/Blais2i" target="_blank">Blaise</a></p>
     </footer>
 </body>
 </html>
