@@ -1,15 +1,17 @@
-* ===== RESET & BASE STYLES ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* ===== GLOBAL VARIABLES & RESET ===== */
 :root {
   --primary-red: #FF6565;
   --dark-blue: #071629;
   --pure-white: #FFFFFF;
   --text-black: #000000;
+  --shadow-sm: 0 2px 10px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 @font-face {
@@ -22,41 +24,41 @@
 body {
   font-family: 'Source Sans Pro', sans-serif;
   color: var(--text-black);
+  line-height: 1.6;
   overflow-x: hidden;
 }
 
-/* ===== HEADER ===== */
+/* ===== HEADER STYLES ===== */
 header {
   background: var(--primary-red);
   height: 90px;
   position: fixed;
   width: 100%;
   z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: var(--shadow-sm);
 }
 
 nav {
-  width: 1200px;
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 30px;
 }
 
 nav img {
   height: 30px;
 }
 
-nav ul {
+.nav-links {
   display: flex;
   gap: 50px;
   list-style: none;
 }
 
-nav a {
+.nav-links a {
   color: var(--pure-white);
   font-size: 12px;
   font-weight: 700;
@@ -66,32 +68,31 @@ nav a {
   transition: opacity 0.2s;
 }
 
-nav a:hover {
+.nav-links a:hover {
   opacity: 0.9;
 }
 
 /* ===== HERO SECTION ===== */
 .hero {
   background: var(--primary-red);
-  height: 700px;
+  min-height: 700px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   color: var(--pure-white);
-  padding-top: 90px;
+  padding: 180px 0 100px;
 }
 
 .hero h1 {
   font-family: 'Spin-Cycle-OT', sans-serif;
   font-size: 100px;
   font-weight: 700;
-  color: white;
-  margin-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: -2px;
   line-height: 1;
+  margin-bottom: 20px;
 }
 
 .hero-tagline {
@@ -101,14 +102,12 @@ nav a:hover {
 }
 
 .hero-tagline span {
-  font-family: 'Source Sans Pro', sans-serif;
   font-size: 24px;
   font-weight: 600;
-  color: white;
   text-transform: uppercase;
 }
 
-.hero button {
+.cta-button {
   background: var(--pure-white);
   color: var(--primary-red);
   border: none;
@@ -123,9 +122,9 @@ nav a:hover {
   transition: all 0.3s ease;
 }
 
-.hero button:hover {
+.cta-button:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: var(--shadow-md);
 }
 
 /* ===== PROS SECTION ===== */
@@ -137,57 +136,137 @@ nav a:hover {
 
 .pros h2 {
   color: var(--dark-blue);
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 600;
-  margin-bottom: 80px;
-  letter-spacing: -1px;
+  margin-bottom: 60px;
 }
 
 .pros-grid {
   display: flex;
   justify-content: center;
-  gap: 90px;
-  max-width: 1200px;
+  gap: 40px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
 .pros-card {
-  width: 180px;
+  width: 160px;
 }
 
 .pros-card img {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 20px;
-  border: 3px solid var(--primary-red);
+  border: 2px solid var(--primary-red);
+  margin-bottom: 15px;
+  transition: transform 0.3s;
+}
+
+.pros-card img:hover {
+  transform: scale(1.05);
 }
 
 .pros-card h3 {
   color: var(--dark-blue);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
 }
 
 .pros-card p {
   color: var(--dark-blue);
-  font-size: 14px;
+  font-size: 12px;
   font-style: italic;
   line-height: 1.4;
 }
 
-/* ===== RESPONSIVE ADJUSTMENTS ===== */
+/* ===== TESTIMONIAL SECTION ===== */
+.testimonial {
+  background: var(--pure-white);
+  padding: 100px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+}
+
+.testimonial-avatar {
+  width: 350px;
+  height: 350px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: var(--shadow-md);
+}
+
+.testimonial-content {
+  max-width: 450px;
+}
+
+.testimonial blockquote {
+  font-size: 24px;
+  line-height: 1.6;
+  color: var(--dark-blue);
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.testimonial blockquote::before {
+  content: "“";
+  font-size: 80px;
+  color: var(--primary-red);
+  position: absolute;
+  left: -40px;
+  top: -30px;
+  opacity: 0.2;
+}
+
+.testimonial-author {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--dark-blue);
+  margin-bottom: 5px;
+}
+
+.testimonial-role {
+  font-size: 16px;
+  font-style: italic;
+  color: var(--dark-blue);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 1200px) {
   nav {
-    width: 100%;
     padding: 0 20px;
   }
   
-  .pros-grid {
+  .testimonial {
     gap: 40px;
+    padding: 100px 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .testimonial {
+    flex-direction: column;
+    text-align: center;
+    padding: 80px 20px;
+  }
+  
+  .testimonial-avatar {
+    width: 280px;
+    height: 280px;
+  }
+  
+  .testimonial blockquote::before {
+    left: 50%;
+    transform: translateX(-50%);
+    top: -50px;
+  }
+  
+  .pros-grid {
     flex-wrap: wrap;
+    gap: 30px;
   }
 }
 
@@ -197,21 +276,25 @@ nav a:hover {
   }
   
   .hero-tagline {
+    flex-direction: column;
     gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
   }
   
-  .pros-grid {
+  .nav-links {
     gap: 30px;
+  }
+  
+  .pros-card {
+    width: 120px;
+  }
+  
+  .pros-card img {
+    width: 80px;
+    height: 80px;
   }
 }
 
 @media (max-width: 480px) {
-  nav ul {
-    gap: 20px;
-  }
-  
   .hero h1 {
     font-size: 48px;
   }
@@ -220,12 +303,35 @@ nav a:hover {
     font-size: 18px;
   }
   
+  .testimonial blockquote {
+    font-size: 18px;
+  }
+  
+  .testimonial-author,
+  .testimonial-role {
+    font-size: 18px;
+  }
+  
+  .testimonial-avatar {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .cta-button {
+    padding: 15px 40px;
+    font-size: 14px;
+  }
+  
+  .pros-grid {
+    gap: 20px;
+  }
+  
   .pros-card {
-    width: 140px;
+    width: 100px;
   }
   
   .pros-card img {
-    width: 120px;
-    height: 120px;
+    width: 60px;
+    height: 60px;
   }
 }
