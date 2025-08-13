@@ -1,0 +1,268 @@
+/* ===== Reset & Base Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #fff;
+    line-height: 1.6;
+    background: #000;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== Header Styles ===== */
+.header {
+    position: fixed;
+    width: 100%;
+    padding: 30px 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 32px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+/* ===== Navigation Styles ===== */
+.nav ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+.nav a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav a:hover {
+    color: #FF6565;
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: #FF6565;
+    transition: width 0.3s;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+    min-height: 100vh;
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('../images/backgrounds/hero-bg.jpg') no-repeat center/cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 180px 0 100px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    font-weight: 400;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ===== CTA Container ===== */
+.cta-container {
+    margin-top: 40px;
+    padding-top: 40px;
+    position: relative;
+}
+
+.cta-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background: #fff;
+}
+
+.cta-heading {
+    font-size: 1.8rem;
+    color: #FF6565;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.cta-text {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* ===== Mobile Responsiveness ===== */
+@media (max-width: 768px) {
+    .hero {
+        padding: 150px 0 80px;
+    }
+    
+    .nav ul {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Base Adjustments */
+    body {
+        font-size: 16px;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    /* Header Adjustments */
+    .header {
+        padding: 20px 0;
+    }
+    
+    .logo {
+        height: 28px;
+    }
+    
+    /* Navigation Adjustments */
+    .nav ul {
+        gap: 15px;
+    }
+    
+    .nav a {
+        font-size: 0.8rem;
+        padding: 6px 8px;
+    }
+    
+    /* Hero Section Adjustments */
+    .hero {
+        padding: 120px 0 60px;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+        margin-bottom: 30px;
+        padding: 0 10px;
+    }
+    
+    /* CTA Adjustments */
+    .cta-container {
+        margin-top: 30px;
+        padding-top: 30px;
+    }
+    
+    .cta-heading {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .cta-text {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+    
+    /* Touch Target Enhancements */
+    a, button {
+        min-width: 44px;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Prevent text overflow */
+    .hero h1, .subtitle, .cta-text {
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+    
+    /* Performance Optimizations */
+    .hero {
+        background-attachment: scroll;
+    }
+}
+
+/* ===== Very Small Devices ===== */
+@media (max-width: 360px) {
+    .nav ul {
+        gap: 10px;
+    }
+    
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+    
+    .cta-heading {
+        font-size: 1.3rem;
+    }
+}
+
+/* ===== Orientation Adjustments ===== */
+@media (max-height: 500px) {
+    .hero {
+        padding: 100px 0 50px;
+    }
+}
