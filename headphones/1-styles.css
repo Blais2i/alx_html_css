@@ -1,0 +1,170 @@
+/* ===== Font Import ===== */
+@font-face {
+    font-family: 'holberton_school-icon';
+    src:  url('../fonts/holberton_school-icon.eot');
+    src:  url('../fonts/holberton_school-icon.eot#iefix') format('embedded-opentype'),
+          url('../fonts/holberton_school-icon.ttf') format('truetype'),
+          url('../fonts/holberton_school-icon.woff') format('woff'),
+          url('../fonts/holberton_school-icon.svg#holberton_school-icon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ===== Icon Base Styles ===== */
+[class^="holberton_school-icon-"],
+[class*=" holberton_school-icon-"] {
+    font-family: 'holberton_school-icon' !important;
+    /* speak: none; */  /* Remove or comment out this line */
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ===== Base Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 1.6;
+    color: #000;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== What We Do Section ===== */
+.what-we-do {
+    padding: 100px 0;
+    background: #fff;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.section-header p {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #333;
+    font-weight: 300;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* ===== Services Grid ===== */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.service {
+    text-align: center;
+    padding: 30px 20px;
+    transition: all 0.3s ease;
+}
+
+.service:hover {
+    transform: translateY(-5px);
+}
+
+.service-icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-icon span {
+    font-size: 4rem;
+    color: #FF6565;
+}
+
+.service h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.service p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* ===== Divider ===== */
+.service:not(:last-child) {
+    position: relative;
+}
+
+.service:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 60px;
+    background: #D3D3D3;
+}
+
+/* ===== Mobile Responsiveness ===== */
+@media (max-width: 900px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+
+    .service:not(:last-child)::after {
+        display: none;
+    }
+
+    .service:nth-child(2n)::after {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .what-we-do {
+        padding: 60px 0;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .section-header {
+        margin-bottom: 40px;
+    }
+
+    .section-header h2 {
+        font-size: 1.7rem;
+    }
+
+    .service {
+        padding: 0;
+    }
+}
